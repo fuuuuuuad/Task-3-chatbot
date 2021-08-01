@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>chatBot</title>
+ <meta charset="utf-8">
+
+ 
+ 
+
+<style>
+
+
+
+
+ 
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+html,body{
+ display: grid;
+ height: 100%;
+ place-items: center;
+ background-color: #111;
+}
+
+.center-div{
+ display: flex;
+ align-items: center;
+}
+.outer-div{
+ position: relative;
+ margin-left: 0px;
+ margin-right: 5rem;
+ background-color: #664AFF;
+}
+.custom-btn{
+ height: 7rem;
+ width: 22rem;
+}
+.circle-div{
+ height: 20rem;
+ width: 20rem;
+ border-radius: 20%;
+}
+.outer-div button, .outer-div span{
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+.outer-div button{
+ background: #111;
+ color: #f2f2f2;
+ outline: none;
+ border: none;
+ font-size: 20px;
+ z-index: 9;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ cursor: pointer;
+}
+.custom-btn button{
+ height: 60px;
+ width: 210px;
+}
+.circle-div button{
+ height: 180px;
+ width: 180px;
+ border-radius: 50%;
+}
+.outer-div span{
+ height: 100%;
+ width: 100%;
+ background: inherit;
+}
+.custom-btn span{
+ border-radius: 50px;
+}
+.circle-div span{
+ border-radius: 50%;
+}
+.outer-div:hover span:nth-child(1){
+ filter: blur(7px);
+}
+.outer-div:hover span:nth-child(2){
+ filter: blur(14px);
+}
+.outer-div:hover{
+ background: linear-gradient(red,blue,yellow);
+ animation: rotate 1.5s linear infinite;
+}
+table{
+    width: 40%;
+}
+@keyframes rotate {
+ 0%{
+ filter: hue-rotate(0deg);
+ }
+ 100%{
+ filter: hue-rotate(360deg);
+ }
+}
+@media (max-width: 500px){
+ .center-div{
+ flex-wrap: wrap;
+ flex-direction: column;
+ }
+ .outer-div{
+ margin-left: 0px;
+ margin-right: 5rem;
+ }
+
+}
+</style>
+</head>
+
+
+
+<body>
+ <div class="center-div">
+ 
+ <span></span>
+ 
+ <table>
+ <tr>
+ <th> </th>
+ <th> </th> 
+ <th> </th>
+ </tr>
+ <tr><td></td>
+ <td> <div class="center-div">
+ <div class="outer-div custom-btn">
+ <button>Foward</button>
+ <span></span>
+ <span></span>
+ </div> </td>
+ <td> </td>
+ </tr> </div>
+ 
+ <br>
+ 
+ <tr>
+ <td></td> <div class="outer-div custom-btn">
+ <button>Left</button>
+ <span></span>
+ <span></span>
+ </div>
+ </div>
+ <br>
+ <br> <br> <br> <br> <br>
+ 
+ 
+ </td>
+ <td> 
+ <br><br><br><br>
+ 
+ 
+ <div class="outer-div circle-div">
+ <button>STOP</button>
+ <span></span>
+ <span></span>
+ </div>
+ </td>
+ 
+ <td>
+ 
+ <br>
+ <br>
+ <br>
+ <br>
+ <div class="outer-div custom-btn">
+ <button>right</button>
+ <span></span>
+ <span></span>
+ </div> 
+ </td>
+ </tr> </div>
+ 
+ 
+ 
+ <tr>
+ 
+ 
+ <td></td>
+ <td> 
+ <br><br><br><br>
+ 
+ <div class="outer-div custom-btn">
+ <button>Backward</button>
+ <span></span>
+ <span></span>
+ </div>
+ <td> 
+ </td>
+ </tr>
+ 
+ 
+ <script>
+ window.watsonAssistantChatOptions = {
+ integrationID: "a3576d26-7706-4328-b387-e4bd1633d89c", // The ID of this integration.
+ region: "eu-gb", // The region your integration is hosted in.
+ serviceInstanceID: "bec9d96a-99c1-4a54-bb5e-c538f5de7d91", // The ID of your service instance.
+ onLoad: function(instance) { instance.render(); }
+ };
+ setTimeout(function(){
+ const t=document.createElement('script');
+ t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+ document.head.appendChild(t);
+ });
+ </script>
+ 
+ 
+ 
+ 
+
+
+</body>
+</html>
